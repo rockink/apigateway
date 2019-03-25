@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    google:
+      path: /test
+      host: http://localhost/test
