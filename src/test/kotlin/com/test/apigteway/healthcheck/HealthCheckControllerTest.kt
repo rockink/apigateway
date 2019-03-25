@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class HealthCheckRestControllerTest{
+class HealthCheckControllerTest{
 
     @Autowired
     lateinit var healthCheckController: HealthCheckController;
