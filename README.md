@@ -17,6 +17,8 @@ different configurations.
 ## Check out the tags
 Tags refer to a milestone for a project. Refer to it if:
 1. `v1` contains plain project. 
+2. `assoc-product-micserv` - connects to Product microservice 
+3. `first-docker-image` creates first docker image
 
 
 ## Connected Services
