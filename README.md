@@ -24,7 +24,22 @@ ApiGateway is a part of microservice architecture to create
 a e-commerce website. 
 
 
-##### Product Service
+## Docker 
+##### Build Docker image (Optional)
+If you want to build Docker image, you can do so. 
+In `pom.xml`, configure the `<dockerImage>` property value, and then run `mvn compile jib:dockerBuild`
+
+
+##### Run Docker Image (via Docker Hub Image)
+We can run api-gateway in dokcker following the commands:
+1. Create a network if you haven't:
+`docker network create -d bridge mynetwork`
+2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" 
+-p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v1`
+
+
+
+## Product Service
 ``Product`` provides the information about the products. 
 Api-gateway proxies the request to this service when it faces path `/product`
 
@@ -33,4 +48,5 @@ One way to connect to this service is directly via docker image.
 1. Create a network if you haven't:
 `docker network create -d bridge mynetwork`
 2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8080:8080 --name product --network mynetwork rockink/product:v1`
+
 
