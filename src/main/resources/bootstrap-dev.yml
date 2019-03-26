@@ -1,0 +1,10 @@
+zuul:
+  routes:
+    google:
+      path: /test
+      host: http://localhost/test
+
+    product:
+      path: /products/**
+      url: http://localhost:8080
+      stripPrefix: true
