@@ -37,7 +37,7 @@ We can run api-gateway in dokcker following the commands:
 1. Create a network if you haven't:
 `docker network create -d bridge mynetwork`
 2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" 
--p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v1`
+-p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v2Static`
 
 
 
@@ -51,4 +51,8 @@ One way to connect to this service is directly via docker image.
 `docker network create -d bridge mynetwork`
 2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8080:8080 --name product --network mynetwork rockink/product:v1`
 
+
+## Static Service 
+`Static` service serves the React based static microservice. 
+The project is hosted in `https://github.com/rockink/shopper-react`
 

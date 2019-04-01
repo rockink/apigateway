@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <kotlin.version>1.3.21</kotlin.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <dockerImage>rockink/apigateway:v1</dockerImage>
+        <dockerImage>rockink/apigateway:v2Static</dockerImage>
     </properties>
 
     <dependencies>
