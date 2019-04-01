@@ -5,6 +5,10 @@ zuul:
       host: http://localhost/test
 
     product:
-      path: /products/**
+      path: /api/products/**
       url: http://localhost:8080
       stripPrefix: true
+
+    static:
+      path: /**
+      url: http://localhost

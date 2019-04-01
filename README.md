@@ -13,6 +13,12 @@ In order to see the power of Zuul, we will need to create different
 microservices, which will then be called by Zuul based on path and
 different configurations. 
 
+## Current Architecture 
+![image](https://user-images.githubusercontent.com/8319308/55299897-16765680-5403-11e9-8bab-a471f58fa42a.png)
+
+The microservices are discussed below. 
+
+
 
 ## Check out the tags
 Tags refer to a milestone for a project. Refer to it if:
@@ -37,12 +43,16 @@ We can run api-gateway in dokcker following the commands:
 1. Create a network if you haven't:
 `docker network create -d bridge mynetwork`
 2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" 
--p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v1`
+-p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v2Static`
 
 
 
 ## Product Service
 ``Product`` provides the information about the products. 
+
+The GitHub project for this is: 
+`https://github.com/rockink/products`
+
 Api-gateway proxies the request to this service when it faces path `/product`
 
 One way to connect to this service is directly via docker image.
@@ -51,4 +61,8 @@ One way to connect to this service is directly via docker image.
 `docker network create -d bridge mynetwork`
 2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8080:8080 --name product --network mynetwork rockink/product:v1`
 
+
+## Static Service 
+`Static` service serves the React based static microservice. 
+The project is hosted in `https://github.com/rockink/shopper-react`
 

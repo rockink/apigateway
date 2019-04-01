@@ -8,3 +8,7 @@ zuul:
       path: /products/**
       url: http://product:8080
       stripPrefix: true
+
+    static:
+      path: /**
+      url: http://static
