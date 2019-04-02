@@ -33,39 +33,25 @@ a e-commerce website.
 
 
 ## Docker 
-##### Build Docker image (Optional)
+##### Building Docker image (Optional)
 If you want to build Docker image, you can do so. 
-In `pom.xml`, configure the `<dockerImage>` property value, and then run `mvn compile jib:dockerBuild`
 
+In `pom.xml`, configure the `<dockerImage>` property value, 
+which is currently set as *rockink/apigateway:v2Static* 
+and then build using `mvn compile jib:dockerBuild`
+
+
+## Running all services 
 
 ##### Run Docker Image (via Docker Hub Image)
-We can run api-gateway in dokcker following the commands:
-1. Create a network if you haven't:
+##### Create a network if you haven't:
 `docker network create -d bridge mynetwork`
-2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v2Static`
+##### [Run the Api-Gateway](https://github.com/rockink/apigateway/tree/v2.0-static) 
+`docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v2Static`
+
+##### [Run Product Service](`https://github.com/rockink/products`) 
+`docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8080:8080 --name product --network mynetwork rockink/product:v1`
 
 
-
-## Product Service
-``Product`` provides the information about the products. 
-
-The GitHub project for this is: 
-`https://github.com/rockink/products`
-
-Api-gateway proxies the request to this service when it faces path `/product`
-
-One way to connect to this service is directly via docker image.
-
-1. Create a network if you haven't:
-`docker network create -d bridge mynetwork`
-2. Run the container. `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8080:8080 --name product --network mynetwork rockink/product:v1`
-
-
-## Static Service 
-`Static` service serves the React based static microservice. 
-The project is hosted in `https://github.com/rockink/shopper-react`
-
-
-Run Static content 
-
+##### [Run Static Service]('https://github.com/rockink/apigateway/tree/v2.0-static')
 `docker run -d -p 80:80 --name static --network mynetwork  rockink/shopper:v2`
