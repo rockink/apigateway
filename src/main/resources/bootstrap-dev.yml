@@ -9,6 +9,8 @@ zuul:
       url: http://localhost:8080
       stripPrefix: true
 
+    # this actually points to react dev environment for us
     static:
       path: /**
-      url: http://localhost
+      url: http://localhost:3000
+      sensitiveHeaders:
