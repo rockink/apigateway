@@ -49,9 +49,9 @@ and then build using `mvn compile jib:dockerBuild`
 ##### [Run the Api-Gateway](https://github.com/rockink/apigateway/tree/v2.0-static) 
 `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8090:8090 --name apiGateway --network mynetwork rockink/apigateway:v2Static`
 
-##### [Run Product Service](`https://github.com/rockink/products`) 
+##### [Run Product Service](https://github.com/rockink/products) 
 `docker run -e "JAVA_TOOL_OPTIONS=-Xms200m -Xmx200m" -p 8080:8080 --name product --network mynetwork rockink/product:v1`
 
 
-##### [Run Static Service]('https://github.com/rockink/apigateway/tree/v2.0-static')
+##### [Run Static Service](https://github.com/rockink/shopper-react/tree/v2.0)
 `docker run -d -p 80:80 --name static --network mynetwork  rockink/shopper:v2`
