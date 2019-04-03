@@ -1,3 +1,7 @@
+## See the demo 
+This site is hosted in OpenShift.
+[Shopper](http://apigateway-shopping.1d35.starter-us-east-1.openshiftapps.com)
+
 ## ApiGateway
 This project is supposed to be an API-Gateway for the shopping app. 
 Behind this api-gateway, there are microservices this api-gateway 
@@ -55,3 +59,9 @@ and then build using `mvn compile jib:dockerBuild`
 
 ##### [Run Static Service](https://github.com/rockink/shopper-react/tree/v2.0)
 `docker run -d -p 80:80 --name static --network mynetwork  rockink/shopper:v2`
+
+
+# See yourself 
+To run
+
+`http://localhost:8090`
